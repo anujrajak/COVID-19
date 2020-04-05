@@ -1,3 +1,51 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+.virusImg {
+  max-width: 50%;
+}
+
+.heading {
+  font-size: 1.6rem;
+  font-weight: bold;
+  // border-bottom: 2px solid #d73a49;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.subHeading {
+  font-size: 12px;
+}
+
+input {
+  margin-top: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  background-image: none;
+  border: .05rem solid #bcc3ce;
+  border-top-color: rgb(188, 195, 206);
+  border-right-color: rgb(188, 195, 206);
+  border-bottom-color: rgb(188, 195, 206);
+  border-left-color: rgb(188, 195, 206);
+  border-radius: .1rem;
+  color: #3b4351;
+  display: block;
+  font-size: .8rem;
+  height: 1.8rem;
+  line-height: 1.2rem;
+  max-width: 100%;
+  outline: 0;
+  padding: 1.25rem 0.6rem;
+  position: relative;
+  transition: background .2s, border .2s, box-shadow .2s, color .2s;
+  width: 100%;
+}
+
+ion-list {
+  overflow: auto;
+  height: 265px;
+  // padding-left: 10px;
+}

@@ -1,17 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Header -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="heading">
+          COVID-19
+          <span style="font-size: 15px;color: #ffb5b5;">
+            Total: {{ total }}
+          </span>
+        </p>
+      </ion-col>
+      <ion-col style="text-align: right;">
+        <img src="../../assets/doctor.svg" alt="virus" class="virusImg">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Overall stats card-->
+  <ion-row style="margin-bottom: -20px; margin-top: -15px;">
+    <ion-col>
+      <ion-card class="ion-padding" style="background-color: #ceecfe;">
+        <ion-row>
+          <ion-col style="margin-top: -10px;">
+            <p class="subHeading">Active</p>
+            <span style="margin-top: 0px;font-size: 24px;font-weight: bold;">{{ active }}</span>
+          </ion-col>
+          <ion-col style="text-align: right;">
+            <img src="../../assets/virus.svg" class="virusImg">
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row style="margin-bottom: -20px;">
+    <ion-col>
+      <ion-card class="ion-padding" style="background-color: #bfe4c6;">
+        <ion-row>
+          <ion-col style="margin-top: -10px;">
+            <p class="subHeading">Cured</p>
+            <span style="margin-top: 0px;font-size: 24px;font-weight: bold;">{{ recovered }}</span>
+          </ion-col>
+          <ion-col style="text-align: right;">
+            <img src="../../assets/patient.svg" class="virusImg">
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row style="margin-bottom: -20px;">
+    <ion-col>
+      <ion-card class="ion-padding" style="background-color: #ffb5b5;">
+        <ion-row>
+          <ion-col style="margin-top: -10px;">
+            <p class="subHeading">Deaths</p>
+            <span style="margin-top: 0px;font-size: 24px;font-weight: bold;">{{ deaths }}</span>
+          </ion-col>
+          <ion-col style="text-align: right;">
+            <img src="../../assets/funeral.svg" class="virusImg">
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- search bar -->
+  <div class="ion-padding">
+    <input class="form-input" type="text" [(ngModel)]="countryFilter.Country_Region" placeholder="Search country">
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let i of values | filterBy: countryFilter">
+      <ion-label>
+        <h2>{{ i.Country_Region }}</h2>
+        <h3>Confirmed: {{ i.Confirmed }}</h3>
+        <h3>Active: {{ i.Active }}</h3>
+        <h3>Deaths: {{ i.Deaths }}</h3>
+        <p>Last Update: {{ i.Last_Update }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Graph -->
+
 </ion-content>

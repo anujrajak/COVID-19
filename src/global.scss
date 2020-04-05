@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*:not(ion-icon){
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+ion-card {
+    border-radius: 25px;
+}
+
+.banner {
+    max-width: 70%;
+}
